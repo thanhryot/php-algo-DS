@@ -1,0 +1,10 @@
+{
+    "name": "thanhryot/php-algorithms",
+    "authors": [
+        {
+            "name": "Nguyen Duc Thanh",
+            "email": "ducthanh186nd@gmail.com"
+        }
+    ],
+    "require": {}
+}
