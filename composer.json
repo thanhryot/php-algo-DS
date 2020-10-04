@@ -16,6 +16,7 @@
     "autoload": {
         "psr-4": {
             "ThanhRyot\\Algorithms\\": "algorithms/",
+            "ThanhRyot\\DataStructures\\": "data_structures/",
             "Test\\": "test/"
         }
     }
