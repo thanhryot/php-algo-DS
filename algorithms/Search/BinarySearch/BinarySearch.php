@@ -2,8 +2,6 @@
 
 namespace ThanhRyot\Algorithms\Search\BinarySearch;
 
-use SebastianBergmann\CodeCoverage\Report\PHP;
-
 class BinarySearch
 {
     /**
