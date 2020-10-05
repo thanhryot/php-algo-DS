@@ -18,6 +18,6 @@ class LinearSearchTest extends TestCase
     public function testCanNotGetResult()
     {
         $result = LinearSearch::search($this->arr, 101);
-        $this->assertSame(null, $result);
+        $this->assertNull($result);
     }
 }
