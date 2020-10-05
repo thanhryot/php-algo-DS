@@ -1,9 +1,9 @@
 <?php
 
-namespace Test\Algorithms\Search\BinarySearch;
+namespace Test\Algorithms\Searching\BinarySearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Search\BinarySearch\BinarySearch;
+use ThanhRyot\Algorithms\Searching\BinarySearch\BinarySearch;
 
 class BinarySearchTest extends TestCase
 {

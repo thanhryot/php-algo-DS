@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Search\BinarySearch;
+namespace ThanhRyot\Algorithms\Searching\BinarySearch;
 
 class BinarySearch
 {

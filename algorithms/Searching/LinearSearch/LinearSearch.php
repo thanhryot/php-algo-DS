@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Search\LinearSearch;
+namespace ThanhRyot\Algorithms\Searching\LinearSearch;
 
 class LinearSearch
 {
