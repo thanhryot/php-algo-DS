@@ -15,9 +15,9 @@ class SelectionSort
                 }
             }
             if ($min != $i) {
-                $temp = $arr[$min];
+                $tmp = $arr[$min];
                 $arr[$min] = $arr[$i];
-                $arr[$i] = $temp;
+                $arr[$i] = $tmp;
             }
         }
         return $arr;
