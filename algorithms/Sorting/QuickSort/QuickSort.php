@@ -4,9 +4,12 @@ namespace ThanhRyot\Algorithms\Sorting\QuickSort;
 
 class QuickSort
 {
-    public static function partition(&$arr, $leftIndex, $rightIndex)
+    public static function partition(&$arr, $low, $high)
     {
-        $pivot = $arr[floor(($leftIndex + $rightIndex) / 2)];
+        $pivot = $arr[floor(($low + $high) / 2)];
+        $leftIndex = $low;
+        $rightIndex = $high;
+
         while ($leftIndex <= $rightIndex) {
             while ($arr[$leftIndex] < $pivot)
                 $leftIndex++;
