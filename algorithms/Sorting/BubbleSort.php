@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-class BubbleSort
+use ThanhRyot\Contracts\ISort;
+
+class BubbleSort implements ISort
 {
-    public static function sort($arr)
+    public function sort(array $arr): array
     {
         $length = count($arr);
         for ($i = $length; $i > 0; $i--) {

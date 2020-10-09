@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-class InsertionSort
+use ThanhRyot\Contracts\ISort;
+
+class InsertionSort implements ISort
 {
-    public static function sort(array $arr)
+    public function sort(array $arr): array
     {
         for ($i = 1; $i < count($arr); $i++) {
             $key = $arr[$i];

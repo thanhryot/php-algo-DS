@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Searching;
 
-class InterpolationSearch
+use ThanhRyot\Contracts\ISearch;
+
+class InterpolationSearch implements ISearch
 {
-    public static function search($arr, $x)
+    public function search(array $arr, int $x): ?int
     {
         $length = count($arr);
         $firstIndex = 0;

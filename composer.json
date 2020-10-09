@@ -17,6 +17,7 @@
         "psr-4": {
             "ThanhRyot\\Algorithms\\": "algorithms/",
             "ThanhRyot\\DataStructures\\": "data-structures/",
+            "ThanhRyot\\Contracts\\": "contracts/",
             "Test\\": "tests/"
         }
     },

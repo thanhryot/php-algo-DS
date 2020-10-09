@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Test\Algorithms\Searching\LinearSearch;
 
@@ -11,13 +11,13 @@ class LinearSearchTest extends TestCase
 
     public function testCanSearch()
     {
-        $result = LinearSearch::search($this->arr, 20);
+        $result = (new LinearSearch())->search($this->arr, 20);
         $this->assertSame(5, $result);
     }
 
     public function testCanNotGetResult()
     {
-        $result = LinearSearch::search($this->arr, 101);
+        $result = (new LinearSearch())->search($this->arr, 101);
         $this->assertNull($result);
     }
 }

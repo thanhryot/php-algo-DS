@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-class QuickSort
+use ThanhRyot\Contracts\ISort;
+
+class QuickSort implements ISort
 {
-    public static function partition(&$arr, $low, $high)
+    public function partition(&$arr, $low, $high): int
     {
         $pivot = $arr[floor(($low + $high) / 2)];
         $leftIndex = $low;
@@ -26,12 +28,18 @@ class QuickSort
         return $leftIndex;
     }
 
-    public static function sort(&$arr, $leftIndex, $rightIndex)
+    public function recursive(&$arr, $leftIndex, $rightIndex): void
     {
         $index = self::partition($arr, $leftIndex, $rightIndex);
         if ($leftIndex < $index - 1)
-            self::sort($arr, $leftIndex, $index - 1);
+            self::recursive($arr, $leftIndex, $index - 1);
         if ($index < $rightIndex)
-            self::sort($arr, $index, $rightIndex);
+            self::recursive($arr, $index, $rightIndex);
+    }
+
+    public function sort(array $arr): array
+    {
+        $this->recursive($arr, 0, count($arr) - 1);
+        return $arr;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Test\Algorithms\Searching\BinarySearch;
 
@@ -11,13 +11,13 @@ class BinarySearchTest extends TestCase
 
     public function testFirstCase()
     {
-        $result = BinarySearch::search($this->arr, 77);
+        $result = (new BinarySearch())->search($this->arr, 77);
         $this->assertSame(6, $result);
     }
 
     public function testSecondCase()
     {
-        $result = BinarySearch::search($this->arr, 34);
+        $result = (new BinarySearch())->search($this->arr, 34);
         $this->assertSame(4, $result);
     }
 }

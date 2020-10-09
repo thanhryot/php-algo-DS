@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Test\Algorithms\Searching\InterpolationSearch;
 
@@ -11,13 +11,13 @@ class InterpolationSearchTest extends TestCase
 
     public function testCanSearch()
     {
-        $result = InterpolationSearch::search($this->arr, 70);
+        $result = (new InterpolationSearch())->search($this->arr, 70);
         $this->assertSame(6, $result);
     }
 
     public function testCanNotGetResult()
     {
-        $result = InterpolationSearch::search($this->arr, 101);
+        $result = (new InterpolationSearch())->search($this->arr, 101);
         $this->assertNull($result);
     }
 }

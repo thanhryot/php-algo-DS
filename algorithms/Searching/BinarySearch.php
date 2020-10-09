@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Searching;
 
-class BinarySearch
+use ThanhRyot\Contracts\ISearch;
+
+class BinarySearch implements ISearch
 {
-    public static function search($arr, $x)
+    public function search(array $arr, int $x): ?int
     {
         $length = count($arr);
         $startIndex = 0;

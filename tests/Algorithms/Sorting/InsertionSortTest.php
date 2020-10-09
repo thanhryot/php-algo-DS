@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Test\Algorithms\Sorting\InsertionSort;
 
@@ -11,7 +11,7 @@ class InsertionSortTest extends TestCase
 
     public function testSorting()
     {
-        $result = InsertionSort::sort($this->arr);
+        $result = (new InsertionSort())->sort($this->arr);
         $this->assertSame([1, 4, 6, 12, 22, 50, 70, 80, 100], $result);
     }
 

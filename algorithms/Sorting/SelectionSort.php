@@ -1,10 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-class SelectionSort
+use ThanhRyot\Contracts\ISort;
+
+class SelectionSort implements ISort
 {
-    public static function sort($arr)
+    public function sort(array $arr): array
     {
         $length = count($arr);
         for ($i = 0; $i < $length; $i++) {

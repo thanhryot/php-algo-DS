@@ -1,26 +1,32 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-class MergeSort
+use ThanhRyot\Contracts\ISort;
+
+class MergeSort implements ISort
 {
-    public static function sort($array)
+    public function sort(array $arr): array
     {
-        if (count($array) == 1) {
-            return $array;
+        if (count($arr) == 1) {
+            return $arr;
         }
 
-        $middle = count($array) / 2;
-        $left = array_slice($array, 0, $middle);
-        $right = array_slice($array, $middle);
-        $left = self::sort($left);
-        $right = self::sort($right);
+        $middle = (int)(count($arr) / 2);
+        $left = array_slice($arr, 0, $middle);
+        $right = array_slice($arr, $middle);
+        $left = $this->sort($left);
+        $right = $this->sort($right);
 
-        return self::merge($left, $right);
+        return $this->merge($left, $right);
     }
 
-
-    private static function merge($left, $right)
+    /**
+     * @param array $left
+     * @param array $right
+     * @return array
+     */
+    private function merge(array $left, array $right)
     {
         $res = array();
 
