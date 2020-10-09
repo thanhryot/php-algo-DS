@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Sorting\InsertionSort;
+namespace ThanhRyot\Algorithms\Sorting;
 
 class InsertionSort
 {

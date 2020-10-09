@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Searching\InterpolationSearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Searching\InterpolationSearch\InterpolationSearch;
+use ThanhRyot\Algorithms\Searching\InterpolationSearch;
 
 class InterpolationSearchTest extends TestCase
 {

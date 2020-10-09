@@ -1,17 +1,17 @@
 <?php
 
-namespace Test\Algorithms\Sorting\BubbleSort;
+namespace Test\Algorithms\Sorting\InsertionSort;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Sorting\BubbleSort\BubbleSort;
+use ThanhRyot\Algorithms\Sorting\InsertionSort;
 
-class BubbleSortTest extends TestCase
+class InsertionSortTest extends TestCase
 {
     private $arr = [100, 12, 22, 50, 70, 80, 1, 4, 6];
 
     public function testSorting()
     {
-        $result = BubbleSort::sort($this->arr);
+        $result = InsertionSort::sort($this->arr);
         $this->assertSame([1, 4, 6, 12, 22, 50, 70, 80, 100], $result);
     }
 

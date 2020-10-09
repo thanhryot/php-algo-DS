@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Sorting\MergeSort;
+namespace ThanhRyot\Algorithms\Sorting;
 
 class MergeSort
 {

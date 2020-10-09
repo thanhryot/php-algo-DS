@@ -1,14 +1,9 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Searching\LinearSearch;
+namespace ThanhRyot\Algorithms\Searching;
 
 class LinearSearch
 {
-    /**
-     * @param $arr
-     * @param $x
-     * @return int|null
-     */
     public static function search($arr, $x)
     {
         foreach ($arr as $key => $item) {

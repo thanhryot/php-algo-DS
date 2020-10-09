@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Sorting\QuickSort;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Sorting\QuickSort\QuickSort;
+use ThanhRyot\Algorithms\Sorting\QuickSort;
 
 class QuickSortTest extends TestCase
 {

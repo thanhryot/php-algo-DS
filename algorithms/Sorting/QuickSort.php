@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Sorting\QuickSort;
+namespace ThanhRyot\Algorithms\Sorting;
 
 class QuickSort
 {

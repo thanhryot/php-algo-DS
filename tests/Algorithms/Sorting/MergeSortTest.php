@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Sorting\MergeSort;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Sorting\MergeSort\MergeSort;
+use ThanhRyot\Algorithms\Sorting\MergeSort;
 
 class MergeSortTest extends TestCase
 {

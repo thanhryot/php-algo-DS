@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Searching\LinearSearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Searching\LinearSearch\LinearSearch;
+use ThanhRyot\Algorithms\Searching\LinearSearch;
 
 class LinearSearchTest extends TestCase
 {

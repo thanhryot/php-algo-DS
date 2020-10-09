@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Sorting\SelectionSort;
+namespace ThanhRyot\Algorithms\Sorting;
 
 class SelectionSort
 {

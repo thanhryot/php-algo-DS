@@ -1,6 +1,6 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Sorting\BubbleSort;
+namespace ThanhRyot\Algorithms\Sorting;
 
 class BubbleSort
 {

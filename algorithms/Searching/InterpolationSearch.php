@@ -1,14 +1,9 @@
 <?php
 
-namespace ThanhRyot\Algorithms\Searching\InterpolationSearch;
+namespace ThanhRyot\Algorithms\Searching;
 
 class InterpolationSearch
 {
-    /**
-     * @param $arr
-     * @param $x
-     * @return int|null
-     */
     public static function search($arr, $x)
     {
         $length = count($arr);

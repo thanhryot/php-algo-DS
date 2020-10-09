@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Searching\BinarySearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Searching\BinarySearch\BinarySearch;
+use ThanhRyot\Algorithms\Searching\BinarySearch;
 
 class BinarySearchTest extends TestCase
 {

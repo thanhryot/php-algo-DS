@@ -3,7 +3,7 @@
 namespace Test\Algorithms\Sorting\SelectionSort;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Sorting\SelectionSort\SelectionSort;
+use ThanhRyot\Algorithms\Sorting\SelectionSort;
 
 class SelectionSortTest extends TestCase
 {
