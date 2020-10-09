@@ -8,19 +8,19 @@ use ThanhRyot\Contracts\IQueue;
 
 class Queue implements IQueue, Countable
 {
-    private $queue;
+    private array $queue;
 
     public function __construct(array $init)
     {
         $this->queue = $init;
     }
 
-    public function enqueue(string $item)
+    public function enqueue(string $item): void
     {
         array_unshift($this->queue, $item);
     }
 
-    public function dequeue()
+    public function dequeue(): void
     {
         if ($this->isEmpty()) {
             throw new UnderflowException("Queue is empty!");
@@ -28,17 +28,20 @@ class Queue implements IQueue, Countable
         array_pop($this->queue);
     }
 
-    public function top()
+    public function top(): string
     {
+        if ($this->isEmpty()) {
+            throw new UnderflowException("Queue is empty!");
+        }
         return end($this->queue);
     }
 
-    public function isEmpty()
+    public function isEmpty(): bool
     {
         return empty($this->queue);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->queue);
     }

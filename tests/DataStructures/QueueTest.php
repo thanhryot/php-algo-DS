@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Test\DataStructures;
 
 use PHPUnit\Framework\TestCase;
 use ThanhRyot\DataStructures\Queue;
+use UnderflowException;
 
 class QueueTest extends TestCase
 {
@@ -21,5 +22,12 @@ class QueueTest extends TestCase
         $queue = new Queue($this->initQueue);
         $queue->dequeue();
         $this->assertCount(3, $queue);
+    }
+
+    public function testExceptionWhenGotTopOfEmptyQueue()
+    {
+        $this->expectException(UnderflowException::class);
+        $queue = new Queue([]);
+        $queue->top();
     }
 }

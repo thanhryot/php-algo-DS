@@ -1,14 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Contracts;
 
 interface IQueue
 {
-    public function enqueue(string $item);
+    public function enqueue(string $item): void;
 
-    public function dequeue();
+    public function dequeue(): void;
 
-    public function top();
+    public function top(): string;
 
-    public function isEmpty();
+    public function isEmpty(): bool;
 }
