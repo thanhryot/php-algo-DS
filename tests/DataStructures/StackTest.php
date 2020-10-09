@@ -1,9 +1,9 @@
 <?php
 
-namespace Test\DataStructures\Stack;
+namespace Test\DataStructures;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\DataStructures\Stack\Stack;
+use ThanhRyot\DataStructures\Stack;
 
 class StackTest extends TestCase
 {

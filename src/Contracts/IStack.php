@@ -1,8 +1,8 @@
 <?php
 
-namespace ThanhRyot\DataStructures\Stack;
+namespace ThanhRyot\Contracts;
 
-interface StackInterface
+interface IStack
 {
     public function push(string $item);
 

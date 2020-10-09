@@ -1,9 +1,9 @@
 <?php
 
-namespace Test\DataStructures\Queue;
+namespace Test\DataStructures;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\DataStructures\Queue\Queue;
+use ThanhRyot\DataStructures\Queue;
 
 class QueueTest extends TestCase
 {

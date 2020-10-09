@@ -1,11 +1,12 @@
 <?php
 
-namespace ThanhRyot\DataStructures\Queue;
+namespace ThanhRyot\DataStructures;
 
 use Countable;
 use UnderflowException;
+use ThanhRyot\Contracts\IQueue;
 
-class Queue implements QueueInterface, Countable
+class Queue implements IQueue, Countable
 {
     private $queue;
 

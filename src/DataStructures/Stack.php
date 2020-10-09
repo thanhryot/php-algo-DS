@@ -1,11 +1,12 @@
 <?php
 
-namespace ThanhRyot\DataStructures\Stack;
+namespace ThanhRyot\DataStructures;
 
 use Countable;
 use UnderflowException;
+use ThanhRyot\Contracts\IStack;
 
-class Stack implements StackInterface, Countable
+class Stack implements IStack, Countable
 {
     private $stack = [];
     private $limit;

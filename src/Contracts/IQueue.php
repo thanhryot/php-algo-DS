@@ -1,8 +1,8 @@
 <?php
 
-namespace ThanhRyot\DataStructures\Queue;
+namespace ThanhRyot\Contracts;
 
-interface QueueInterface
+interface IQueue
 {
     public function enqueue(string $item);
 
