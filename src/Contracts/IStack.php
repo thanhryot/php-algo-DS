@@ -1,14 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ThanhRyot\Contracts;
 
 interface IStack
 {
-    public function push(string $item);
+    public function push(string $item): void;
 
-    public function pop();
+    public function pop(): void;
 
-    public function top();
+    public function top(): string;
 
-    public function isEmpty();
+    public function isEmpty(): bool;
 }

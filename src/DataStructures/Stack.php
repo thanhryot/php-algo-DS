@@ -3,13 +3,14 @@
 namespace ThanhRyot\DataStructures;
 
 use Countable;
+use OverflowException;
 use UnderflowException;
 use ThanhRyot\Contracts\IStack;
 
 class Stack implements IStack, Countable
 {
-    private $stack = [];
-    private $limit;
+    private array $stack;
+    private int $limit;
 
     public function __construct(array $init, int $limit = 5)
     {
@@ -17,16 +18,16 @@ class Stack implements IStack, Countable
         $this->limit = $limit;
     }
 
-    public function push(string $item)
+    public function push(string $item): void
     {
         if (count($this->stack) < $this->limit) {
             array_unshift($this->stack, $item);
         } else {
-            return "Stack is full!";
+            throw new OverflowException("Stack is full!");
         }
     }
 
-    public function pop()
+    public function pop(): void
     {
         if ($this->isEmpty()) {
             throw new UnderflowException("Stack is empty!");
@@ -34,22 +35,25 @@ class Stack implements IStack, Countable
         array_shift($this->stack);
     }
 
-    public function top()
+    public function top(): string
     {
+        if ($this->isEmpty()) {
+            throw new UnderflowException("Stack is empty!");
+        }
         return current($this->stack);
     }
 
-    public function isEmpty()
+    public function isEmpty(): bool
     {
         return empty($this->stack);
     }
 
-    public function getElement()
+    public function getElement(): array
     {
         return $this->stack;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->stack);
     }

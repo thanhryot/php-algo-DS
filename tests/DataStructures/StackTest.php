@@ -2,6 +2,7 @@
 
 namespace Test\DataStructures;
 
+use OverflowException;
 use PHPUnit\Framework\TestCase;
 use ThanhRyot\DataStructures\Stack;
 
@@ -18,9 +19,9 @@ class StackTest extends TestCase
 
     public function testCanNotPushStackWhenLimit()
     {
+        $this->expectException(OverflowException::class);
         $stack = new Stack($this->initStack, 4);
         $stack->push("Thanh");
-        $this->assertCount(4, $stack);
     }
 
     public function testCanPopStack()
