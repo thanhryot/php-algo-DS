@@ -44,8 +44,10 @@ interface ILinkedList extends Countable
 
     /**
      * Deletes the first element of the linked list
+     *
+     * @return bool
      */
-    public function deleteAtHead(): void;
+    public function deleteAtHead(): bool;
 
     /**
      * Finds if a node exists in the linked list

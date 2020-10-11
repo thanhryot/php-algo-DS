@@ -52,4 +52,10 @@ class LinkedListTest extends TestCase
         $result = $this->linkedList->find(new Node(4));
         $this->assertFalse($result);
     }
+
+    public function testCanRemoveHeadNodeInLinkedList()
+    {
+        $result = $this->linkedList->deleteAtHead();
+        $this->assertTrue($result);
+    }
 }

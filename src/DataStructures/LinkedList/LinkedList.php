@@ -63,9 +63,16 @@ class LinkedList implements ILinkedList
     }
 
 
-    public function deleteAtHead(): void
+    public function deleteAtHead(): bool
     {
-
+        if (!$this->isEmpty()) {
+            $currentNode = $this->head;
+            $nextNode = $currentNode->getNext();
+            $this->head = $nextNode;
+            unset($currentNode);
+            return true;
+        }
+        return false;
     }
 
 
