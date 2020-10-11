@@ -3,7 +3,6 @@
 namespace ThanhRyot\Contracts;
 
 use Countable;
-use PHPUnit\Framework\Constraint\IsNan;
 
 interface ILinkedList extends Countable
 {
