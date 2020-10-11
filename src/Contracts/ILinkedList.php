@@ -3,6 +3,7 @@
 namespace ThanhRyot\Contracts;
 
 use Countable;
+use PHPUnit\Framework\Constraint\IsNan;
 
 interface ILinkedList extends Countable
 {
@@ -28,10 +29,11 @@ interface ILinkedList extends Countable
      * Inserts a given element before specific node.
      *
      * @param INode $node
+     * @param INode $target target node
      *
      * @return void
      */
-    public function insertBeforeSpecificNode(INode $node): void;
+    public function insertBeforeSpecificNode(INode $node, INode $target): void;
 
     /**
      * Deletes a given element from the linked list
@@ -40,14 +42,14 @@ interface ILinkedList extends Countable
      *
      * @return void
      */
-    public function delete(INode $node): bool;
+    public function delete(INode $node): void;
 
     /**
      * Deletes the first element of the linked list
      *
-     * @return bool
+     * @return void
      */
-    public function deleteAtHead(): bool;
+    public function deleteAtHead(): void;
 
     /**
      * Finds if a node exists in the linked list

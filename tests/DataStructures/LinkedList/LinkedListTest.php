@@ -5,6 +5,7 @@ namespace Test\DataStructures\LinkedList;
 use PHPUnit\Framework\TestCase;
 use ThanhRyot\DataStructures\LinkedList\LinkedList;
 use ThanhRyot\DataStructures\LinkedList\Node;
+use UnderflowException;
 
 class LinkedListTest extends TestCase
 {
@@ -32,8 +33,8 @@ class LinkedListTest extends TestCase
 
     public function testCanDeleteNodeInLinkedList()
     {
-        $result = $this->linkedList->delete($this->node2);
-        $this->assertTrue($result);
+        $this->linkedList->delete($this->node2);
+        $this->assertCount(2, $this->linkedList);
     }
 
     public function testCountNodeInLinkedList()
@@ -55,7 +56,26 @@ class LinkedListTest extends TestCase
 
     public function testCanRemoveHeadNodeInLinkedList()
     {
-        $result = $this->linkedList->deleteAtHead();
-        $this->assertTrue($result);
+        $this->linkedList->deleteAtHead();
+        $this->assertCount(2, $this->linkedList);
+    }
+
+    public function testExceptionWhenRemoveHeadNodeInNullLinkedList()
+    {
+        $this->expectException(UnderflowException::class);
+        $this->expectExceptionMessage('Linked list is null!');
+        $nullLinkedList = new LinkedList();
+        $nullLinkedList->deleteAtHead();
+    }
+
+    public function testCanInsertBeforeSpecificNodeInLinkedList()
+    {
+        $node4 = new Node(4);
+        $node5 = new Node(5);
+        $this->linkedList->insertBeforeSpecificNode($this->node2, $node4);
+        $this->linkedList->insertBeforeSpecificNode($this->node1, $node5);
+        // 5 - 1 - 4 - 2 -3
+        $this->assertSame($this->node1, $node5->getNext());
+        $this->assertSame($this->node2, $node4->getNext());
     }
 }

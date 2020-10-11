@@ -4,6 +4,7 @@ namespace ThanhRyot\DataStructures\LinkedList;
 
 use ThanhRyot\Contracts\ILinkedList;
 use ThanhRyot\Contracts\INode;
+use UnderflowException;
 
 class LinkedList implements ILinkedList
 {
@@ -35,12 +36,29 @@ class LinkedList implements ILinkedList
         }
     }
 
-    public function insertBeforeSpecificNode(INode $node): void
+    public function insertBeforeSpecificNode(INode $node, INode $target): void
     {
-
+        if (!$this->isEmpty()) {
+            $currentNode = $this->head;
+            $prevNode = null;
+            while ($currentNode->getNext() !== null) {
+                if ($currentNode->getData() == $node->getData()) {
+                    if (is_null($prevNode)) {
+                        $this->head = $target;
+                    } else {
+                        $prevNode->setNext($target);
+                    }
+                    $target->setNext($currentNode);
+                    return;
+                }
+                $prevNode = $currentNode;
+                $currentNode = $currentNode->getNext();
+            }
+        }
+        throw new UnderflowException("Linked list is null! First to all you need add node to it!");
     }
 
-    public function delete(INode $node): bool
+    public function delete(INode $node): void
     {
         if (!$this->isEmpty()) {
             $currentNode = $this->head;
@@ -53,28 +71,26 @@ class LinkedList implements ILinkedList
                         $prevNode->setNext($currentNode->getNext());
                     }
                     unset($currentNode);
-                    return true;
+                    return;
                 }
                 $prevNode = $currentNode;
                 $currentNode = $currentNode->getNext();
             }
-            return false;
+            throw new UnderflowException("Linked list is null!");
         }
     }
 
-
-    public function deleteAtHead(): bool
+    public function deleteAtHead(): void
     {
         if (!$this->isEmpty()) {
             $currentNode = $this->head;
             $nextNode = $currentNode->getNext();
             $this->head = $nextNode;
             unset($currentNode);
-            return true;
+            return;
         }
-        return false;
+        throw new UnderflowException("Linked list is null!");
     }
-
 
     public function find(INode $node): bool
     {
