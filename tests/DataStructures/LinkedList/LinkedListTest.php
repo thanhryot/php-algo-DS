@@ -78,4 +78,11 @@ class LinkedListTest extends TestCase
         $this->assertSame($this->node1, $node5->getNext());
         $this->assertSame($this->node2, $node4->getNext());
     }
+
+    public function testCanReverseLinkedList()
+    {
+        $this->linkedList->reverse();
+        $this->assertSame($this->node1, $this->node2->getNext());
+        $this->assertSame($this->node2, $this->node3->getNext());
+    }
 }

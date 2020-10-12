@@ -66,5 +66,11 @@ interface ILinkedList extends Countable
      */
     public function isEmpty(): bool;
 
+    /**
+     * Reverse the linked list.
+     *
+     * @return void
+     */
+    public function reverse(): void;
 
 }

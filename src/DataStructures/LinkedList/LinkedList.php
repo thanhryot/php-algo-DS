@@ -12,7 +12,7 @@ class LinkedList implements ILinkedList
 
     public function __construct()
     {
-        $this->head;
+        $this->head = null;
     }
 
     public function insertAtHead(INode $node): void
@@ -126,4 +126,22 @@ class LinkedList implements ILinkedList
         }
         return 0;
     }
+
+
+    public function reverse(): void
+    {
+        if (!$this->isEmpty()) {
+            $currentNode = $this->head;
+            $prevNode = null;
+            $nextNode = null;
+            while ($currentNode !== null) {
+                $nextNode = $currentNode->getNext();
+                $currentNode->setNext($prevNode);
+                $prevNode = $currentNode;
+                $currentNode = $nextNode;
+            }
+            $this->head = $prevNode;
+        }
+    }
+
 }
