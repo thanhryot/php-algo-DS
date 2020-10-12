@@ -26,7 +26,7 @@ class LinkedList implements ILinkedList
     public function insertAtEnd(INode $node): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             while ($currentNode->getNext() !== null) {
                 $currentNode = $currentNode->getNext();
             }
@@ -39,7 +39,7 @@ class LinkedList implements ILinkedList
     public function insertBeforeSpecificNode(INode $node, INode $target): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             $prevNode = null;
             while ($currentNode->getNext() !== null) {
                 if ($currentNode->getData() == $node->getData()) {
@@ -61,7 +61,7 @@ class LinkedList implements ILinkedList
     public function delete(INode $node): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             $prevNode = null;
             while ($currentNode->getNext() !== null) {
                 if ($currentNode->getData() == $node->getData()) {
@@ -83,7 +83,7 @@ class LinkedList implements ILinkedList
     public function deleteAtHead(): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             $nextNode = $currentNode->getNext();
             $this->head = $nextNode;
             unset($currentNode);
@@ -95,7 +95,7 @@ class LinkedList implements ILinkedList
     public function find(INode $node): bool
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             while ($currentNode->getNext() !== null) {
 
                 if ($currentNode->getData() == $node->getData()) {
@@ -110,14 +110,14 @@ class LinkedList implements ILinkedList
 
     public function isEmpty(): bool
     {
-        return $this->head ? false : true;
+        return $this->getHead() ? false : true;
     }
 
     public function count(): int
     {
         if (!$this->isEmpty()) {
             $count = 1;
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             while ($currentNode->getNext() !== null) {
                 $currentNode = $currentNode->getNext();
                 $count++;
@@ -131,7 +131,7 @@ class LinkedList implements ILinkedList
     public function reverse(): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
+            $currentNode = $this->getHead();
             $prevNode = null;
             $nextNode = null;
             while ($currentNode !== null) {
@@ -144,4 +144,8 @@ class LinkedList implements ILinkedList
         }
     }
 
+    public function getHead(): ?INode
+    {
+        return $this->head;
+    }
 }
