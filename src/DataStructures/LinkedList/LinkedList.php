@@ -8,19 +8,14 @@ use UnderflowException;
 
 class LinkedList implements ILinkedList
 {
-    private $head;
-
-    public function __construct()
-    {
-        $this->head = null;
-    }
+    private $head = null;
 
     public function insertAtHead(INode $node): void
     {
         if (!$this->isEmpty()) {
-            $node->setNext($this->head);
+            $node->setNext($this->getHead());
         }
-        $this->head = $node;
+        $this->setHead($node);
     }
 
     public function insertAtEnd(INode $node): void
@@ -32,7 +27,7 @@ class LinkedList implements ILinkedList
             }
             $currentNode->setNext($node);
         } else {
-            $this->head = $node;
+            $this->setHead($node);
         }
     }
 
@@ -44,7 +39,7 @@ class LinkedList implements ILinkedList
             while ($currentNode->getNext() !== null) {
                 if ($currentNode->getData() == $node->getData()) {
                     if (is_null($prevNode)) {
-                        $this->head = $target;
+                        $this->setHead($target);
                     } else {
                         $prevNode->setNext($target);
                     }
@@ -66,7 +61,7 @@ class LinkedList implements ILinkedList
             while ($currentNode->getNext() !== null) {
                 if ($currentNode->getData() == $node->getData()) {
                     if (is_null($prevNode)) {
-                        $this->head = $currentNode->getNext();
+                        $this->setHead($currentNode->getNext());
                     } else {
                         $prevNode->setNext($currentNode->getNext());
                     }
@@ -85,7 +80,7 @@ class LinkedList implements ILinkedList
         if (!$this->isEmpty()) {
             $currentNode = $this->getHead();
             $nextNode = $currentNode->getNext();
-            $this->head = $nextNode;
+            $this->setHead($nextNode);
             unset($currentNode);
             return;
         }
@@ -140,12 +135,17 @@ class LinkedList implements ILinkedList
                 $prevNode = $currentNode;
                 $currentNode = $nextNode;
             }
-            $this->head = $prevNode;
+            $this->setHead($prevNode);
         }
     }
 
     public function getHead(): ?INode
     {
         return $this->head;
+    }
+
+    public function setHead(?INode $node): void
+    {
+        $this->head = $node;
     }
 }
