@@ -21,11 +21,11 @@ class LinkedList implements ILinkedList
     public function insertAtEnd(INode $node): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            while ($currentNode->getNext() !== null) {
-                $currentNode = $currentNode->getNext();
+            $current = $this->getHead();
+            while ($current->getNext() !== null) {
+                $current = $current->getNext();
             }
-            $currentNode->setNext($node);
+            $current->setNext($node);
         } else {
             $this->setHead($node);
         }
@@ -34,20 +34,20 @@ class LinkedList implements ILinkedList
     public function insertBeforeSpecificNode(INode $node, INode $target): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            $prevNode = null;
-            while ($currentNode->getNext() !== null) {
-                if ($currentNode->getData() == $node->getData()) {
-                    if (is_null($prevNode)) {
+            $current = $this->getHead();
+            $prev = null;
+            while ($current->getNext() !== null) {
+                if ($current->getData() == $node->getData()) {
+                    if (is_null($prev)) {
                         $this->setHead($target);
                     } else {
-                        $prevNode->setNext($target);
+                        $prev->setNext($target);
                     }
-                    $target->setNext($currentNode);
+                    $target->setNext($current);
                     return;
                 }
-                $prevNode = $currentNode;
-                $currentNode = $currentNode->getNext();
+                $prev = $current;
+                $current = $current->getNext();
             }
         }
         throw new UnderflowException("Linked list is null! First to all you need add node to it!");
@@ -56,20 +56,20 @@ class LinkedList implements ILinkedList
     public function delete(INode $node): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            $prevNode = null;
-            while ($currentNode->getNext() !== null) {
-                if ($currentNode->getData() == $node->getData()) {
-                    if (is_null($prevNode)) {
-                        $this->setHead($currentNode->getNext());
+            $current = $this->getHead();
+            $prev = null;
+            while ($current->getNext() !== null) {
+                if ($current->getData() == $node->getData()) {
+                    if (is_null($prev)) {
+                        $this->setHead($current->getNext());
                     } else {
-                        $prevNode->setNext($currentNode->getNext());
+                        $prev->setNext($current->getNext());
                     }
-                    unset($currentNode);
+                    unset($current);
                     return;
                 }
-                $prevNode = $currentNode;
-                $currentNode = $currentNode->getNext();
+                $prev = $current;
+                $current = $current->getNext();
             }
             throw new UnderflowException("Linked list is null!");
         }
@@ -78,10 +78,10 @@ class LinkedList implements ILinkedList
     public function deleteAtHead(): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            $nextNode = $currentNode->getNext();
-            $this->setHead($nextNode);
-            unset($currentNode);
+            $current = $this->getHead();
+            $next = $current->getNext();
+            $this->setHead($next);
+            unset($current);
             return;
         }
         throw new UnderflowException("Linked list is null!");
@@ -90,13 +90,13 @@ class LinkedList implements ILinkedList
     public function find(INode $node): bool
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            while ($currentNode->getNext() !== null) {
+            $current = $this->getHead();
+            while ($current->getNext() !== null) {
 
-                if ($currentNode->getData() == $node->getData()) {
+                if ($current->getData() == $node->getData()) {
                     return true;
                 }
-                $currentNode = $currentNode->getNext();
+                $current = $current->getNext();
             }
         }
         return false;
@@ -112,9 +112,9 @@ class LinkedList implements ILinkedList
     {
         if (!$this->isEmpty()) {
             $count = 1;
-            $currentNode = $this->getHead();
-            while ($currentNode->getNext() !== null) {
-                $currentNode = $currentNode->getNext();
+            $current = $this->getHead();
+            while ($current->getNext() !== null) {
+                $current = $current->getNext();
                 $count++;
             }
             return $count;
@@ -126,16 +126,16 @@ class LinkedList implements ILinkedList
     public function reverse(): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->getHead();
-            $prevNode = null;
-            $nextNode = null;
-            while ($currentNode !== null) {
-                $nextNode = $currentNode->getNext();
-                $currentNode->setNext($prevNode);
-                $prevNode = $currentNode;
-                $currentNode = $nextNode;
+            $current = $this->getHead();
+            $prev = null;
+            $next = null;
+            while ($current !== null) {
+                $next = $current->getNext();
+                $current->setNext($prev);
+                $prev = $current;
+                $current = $next;
             }
-            $this->setHead($prevNode);
+            $this->setHead($prev);
         }
     }
 
