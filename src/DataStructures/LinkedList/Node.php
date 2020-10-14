@@ -25,12 +25,12 @@ class Node implements INode
         return $this->data;
     }
 
-    public function setNext($next): void
+    public function setNext(?INode $next): void
     {
         $this->next = $next;
     }
 
-    public function getNext()
+    public function getNext(): ?INode
     {
         return $this->next;
     }

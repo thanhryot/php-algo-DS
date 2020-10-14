@@ -8,7 +8,6 @@ interface IStack
      * Add an item in stack.
      *
      * @param string $item
-     *
      * @return void
      */
     public function push(string $item): void;
@@ -17,7 +16,6 @@ interface IStack
      * Remove an item in stack.
      *
      * @param string $item
-     *
      * @return void
      */
     public function pop(): void;
@@ -26,7 +24,6 @@ interface IStack
      * Get a current item in stack.
      *
      * @param string $item
-     *
      * @return string
      */
     public function top(): string;

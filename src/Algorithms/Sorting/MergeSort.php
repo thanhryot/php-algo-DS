@@ -21,11 +21,6 @@ class MergeSort implements ISort
         return $this->merge($left, $right);
     }
 
-    /**
-     * @param array $left
-     * @param array $right
-     * @return array
-     */
     private function merge(array $left, array $right)
     {
         $res = array();

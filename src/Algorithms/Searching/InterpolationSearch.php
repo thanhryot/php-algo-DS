@@ -9,16 +9,16 @@ class InterpolationSearch implements ISearch
     public function search(array $arr, int $x): ?int
     {
         $length = count($arr);
-        $firstIndex = 0;
-        $lastIndex = $length - 1;
-        while ($firstIndex <= $lastIndex) {
-            $middle = $firstIndex + (($lastIndex - $firstIndex) / ($arr[$lastIndex] - $arr[$firstIndex])) * ($x - $arr[$firstIndex]);
-            $middle = (int)floor($middle);
-            if ($arr[$middle] == $x) return $middle;
-            if ($arr[$middle] < $x)
-                $firstIndex = $middle + 1;
-            if ($arr[$middle] > $x)
-                $lastIndex = $middle - 1;
+        $start = 0;
+        $end = $length - 1;
+        while ($start <= $end) {
+            $mid = $start + (($end - $start) / ($arr[$end] - $arr[$start])) * ($x - $arr[$start]);
+            $mid = (int)floor($mid);
+            if ($arr[$mid] == $x) return $mid;
+            if ($arr[$mid] < $x)
+                $start = $mid + 1;
+            if ($arr[$mid] > $x)
+                $end = $mid - 1;
         }
         return null;
     }

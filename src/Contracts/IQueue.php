@@ -8,7 +8,6 @@ interface IQueue
      * Add an item in queue.
      *
      * @param string $item
-     *
      * @return void
      */
     public function enqueue(string $item): void;

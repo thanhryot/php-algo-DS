@@ -9,32 +9,32 @@ class QuickSort implements ISort
     public function partition(&$arr, $low, $high): int
     {
         $pivot = $arr[floor(($low + $high) / 2)];
-        $leftIndex = $low;
-        $rightIndex = $high;
+        $left = $low;
+        $right = $high;
 
-        while ($leftIndex <= $rightIndex) {
-            while ($arr[$leftIndex] < $pivot)
-                $leftIndex++;
-            while ($arr[$rightIndex] > $pivot)
-                $rightIndex--;
-            if ($leftIndex <= $rightIndex) {
-                $tmp = $arr[$leftIndex];
-                $arr[$leftIndex] = $arr[$rightIndex];
-                $arr[$rightIndex] = $tmp;
-                $leftIndex++;
-                $rightIndex--;
+        while ($left <= $right) {
+            while ($arr[$left] < $pivot)
+                $left++;
+            while ($arr[$right] > $pivot)
+                $right--;
+            if ($left <= $right) {
+                $tmp = $arr[$left];
+                $arr[$left] = $arr[$right];
+                $arr[$right] = $tmp;
+                $left++;
+                $right--;
             }
         }
-        return $leftIndex;
+        return $left;
     }
 
-    public function recursive(&$arr, $leftIndex, $rightIndex): void
+    public function recursive(&$arr, $left, $right): void
     {
-        $index = self::partition($arr, $leftIndex, $rightIndex);
-        if ($leftIndex < $index - 1)
-            self::recursive($arr, $leftIndex, $index - 1);
-        if ($index < $rightIndex)
-            self::recursive($arr, $index, $rightIndex);
+        $index = self::partition($arr, $left, $right);
+        if ($left < $index - 1)
+            self::recursive($arr, $left, $index - 1);
+        if ($index < $right)
+            self::recursive($arr, $index, $right);
     }
 
     public function sort(array $arr): array
