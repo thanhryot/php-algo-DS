@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\DataStructures;
+namespace ThanhRyot\DataStructures\Stack;
 
 use Countable;
 use OverflowException;

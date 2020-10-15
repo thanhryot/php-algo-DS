@@ -3,7 +3,7 @@
 namespace Test\DataStructures;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\DataStructures\Queue;
+use ThanhRyot\DataStructures\Queue\Queue;
 use UnderflowException;
 
 class QueueTest extends TestCase
