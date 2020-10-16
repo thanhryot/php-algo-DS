@@ -2,7 +2,9 @@
 
 namespace ThanhRyot\Interfaces;
 
-interface Stack
+use Countable;
+
+interface Stack extends Countable
 {
     /**
      * Add an item in stack.
@@ -26,7 +28,7 @@ interface Stack
      * @param string $item
      * @return string
      */
-    public function top(): string;
+    public function peek(): string;
 
     /**
      * Check stack is empty or not.
@@ -34,4 +36,18 @@ interface Stack
      * @return bool
      */
     public function isEmpty(): bool;
+
+    /**
+     * Reset the stack.
+     *
+     * @return void
+     */
+    public function clear(): void;
+
+    /**
+     * Convert the stack to string.
+     *
+     * @return string|null
+     */
+    public function toString(): ?string;
 }
