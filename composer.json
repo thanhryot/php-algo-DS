@@ -1,9 +1,13 @@
 {
-    "name": "thanhryot/php-algorithms",
+    "name": "thanhryot/php-algo-ds",
+    "type": "library",
+    "description": "PHP algorithms and data structures",
+    "keywords": ["PHP algorithms", "PHP data structures"],
+    "license": "MIT",
     "authors": [
         {
-            "name": "Nguyen Duc Thanh",
-            "email": "ducthanh186nd@gmail.com"
+            "name": "Thanh Ryot",
+            "email": "thanhryot@gmail.com"
         }
     ],
     "require": {
@@ -19,8 +23,5 @@
             "ThanhRyot\\": "src/",
             "Test\\": "tests/"
         }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit tests"
     }
 }
