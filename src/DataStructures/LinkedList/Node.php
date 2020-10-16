@@ -2,7 +2,7 @@
 
 namespace ThanhRyot\DataStructures\LinkedList;
 
-use ThanhRyot\Contracts\INode;
+use ThanhRyot\Interfaces\Node as INode;
 
 class Node implements INode
 {

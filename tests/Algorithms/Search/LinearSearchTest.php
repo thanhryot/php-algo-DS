@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Test\Algorithms\Searching\LinearSearch;
+namespace Test\Algorithms\Search\LinearSearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Searching\LinearSearch;
+use ThanhRyot\Algorithms\Search\LinearSearch;
 
 class LinearSearchTest extends TestCase
 {

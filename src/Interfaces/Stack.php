@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
-interface IStack
+interface Stack
 {
     /**
      * Add an item in stack.

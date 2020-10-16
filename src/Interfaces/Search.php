@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
-interface ISearch
+interface Search
 {
     /**
-     * Searching an item in array.
+     * Search an item in array.
      *
      * @param array $arr
      * @param string $x

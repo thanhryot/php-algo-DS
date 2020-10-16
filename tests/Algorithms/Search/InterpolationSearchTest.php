@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Test\Algorithms\Searching\InterpolationSearch;
+namespace Test\Algorithms\Search\InterpolationSearch;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\Algorithms\Searching\InterpolationSearch;
+use ThanhRyot\Algorithms\Search\InterpolationSearch;
 
 class InterpolationSearchTest extends TestCase
 {

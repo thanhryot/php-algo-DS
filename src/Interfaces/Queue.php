@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
-interface IQueue
+interface Queue
 {
     /**
      * Add an item in queue.

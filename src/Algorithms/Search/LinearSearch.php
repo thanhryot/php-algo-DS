@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Algorithms\Searching;
+namespace ThanhRyot\Algorithms\Search;
 
-use ThanhRyot\Contracts\ISearch;
+use ThanhRyot\Interfaces\Search as ISearch;
 
 class LinearSearch implements ISearch
 {

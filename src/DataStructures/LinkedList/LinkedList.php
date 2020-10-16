@@ -2,8 +2,8 @@
 
 namespace ThanhRyot\DataStructures\LinkedList;
 
-use ThanhRyot\Contracts\ILinkedList;
-use ThanhRyot\Contracts\INode;
+use ThanhRyot\Interfaces\LinkedList as ILinkedList;
+use ThanhRyot\Interfaces\Node as INode;
 use UnderflowException;
 
 class LinkedList implements ILinkedList

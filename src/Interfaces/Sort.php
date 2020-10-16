@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
-interface ISort
+interface Sort
 {
     /**
      * Sorting an array.

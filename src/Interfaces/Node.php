@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
-interface INode
+interface Node
 {
     /**
      * Set data into the node.
@@ -22,15 +22,15 @@ interface INode
     /**
      * Set a next node.
      *
-     * @param INode $next
+     * @param Node $next
      * @return void
      */
-    public function setNext(?INode $next): void;
+    public function setNext(?Node $next): void;
 
     /**
      * Get a next node from current node.
      *
-     * @return INode
+     * @return Node
      */
-    public function getNext(): ?INode;
+    public function getNext(): ?Node;
 }

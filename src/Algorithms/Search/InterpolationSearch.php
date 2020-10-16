@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Algorithms\Searching;
+namespace ThanhRyot\Algorithms\Search;
 
-use ThanhRyot\Contracts\ISearch;
+use ThanhRyot\Interfaces\Search as ISearch;
 
-class BinarySearch implements ISearch
+class InterpolationSearch implements ISearch
 {
     public function search(array $arr, int $x): ?int
     {
@@ -12,15 +12,13 @@ class BinarySearch implements ISearch
         $start = 0;
         $end = $length - 1;
         while ($start <= $end) {
-            $mid = $start + floor(($end - $start) / 2);
+            $mid = $start + (($end - $start) / ($arr[$end] - $arr[$start])) * ($x - $arr[$start]);
+            $mid = (int)floor($mid);
+            if ($arr[$mid] == $x) return $mid;
             if ($arr[$mid] < $x)
                 $start = $mid + 1;
-
             if ($arr[$mid] > $x)
                 $end = $mid - 1;
-
-            if ($arr[$mid] == $x)
-                return (int)$mid;
         }
         return null;
     }

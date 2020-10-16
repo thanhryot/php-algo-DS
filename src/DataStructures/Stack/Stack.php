@@ -5,7 +5,7 @@ namespace ThanhRyot\DataStructures\Stack;
 use Countable;
 use OverflowException;
 use UnderflowException;
-use ThanhRyot\Contracts\IStack;
+use ThanhRyot\Interfaces\Stack as IStack;
 
 class Stack implements IStack, Countable
 {

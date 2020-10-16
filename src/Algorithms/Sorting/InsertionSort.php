@@ -2,7 +2,7 @@
 
 namespace ThanhRyot\Algorithms\Sorting;
 
-use ThanhRyot\Contracts\ISort;
+use ThanhRyot\Interfaces\Sort as ISort;
 
 class InsertionSort implements ISort
 {

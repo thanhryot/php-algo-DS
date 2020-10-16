@@ -1,43 +1,43 @@
 <?php declare(strict_types=1);
 
-namespace ThanhRyot\Contracts;
+namespace ThanhRyot\Interfaces;
 
 use Countable;
 
-interface ILinkedList extends Countable
+interface LinkedList extends Countable
 {
     /**
      * Inserts a given element at the start/head of the linked list.
      *
-     * @param INode $node
+     * @param Node $node
      * @return void
      */
-    public function insertAtHead(INode $node): void;
+    public function insertAtHead(Node $node): void;
 
     /**
      * Inserts a given element at the end of the linked list.
      *
-     * @param INode $node
+     * @param Node $node
      * @return void
      */
-    public function insertAtEnd(INode $node): void;
+    public function insertAtEnd(Node $node): void;
 
     /**
      * Inserts a given element before specific node.
      *
-     * @param INode $node
-     * @param INode $target target node
+     * @param Node $node
+     * @param Node $target target node
      * @return void
      */
-    public function insertBeforeSpecificNode(INode $node, INode $target): void;
+    public function insertBeforeSpecificNode(Node $node, Node $target): void;
 
     /**
      * Deletes a given element from the linked list.
      *
-     * @param INode $node
+     * @param Node $node
      * @return void
      */
-    public function delete(INode $node): void;
+    public function delete(Node $node): void;
 
     /**
      * Deletes the first element of the linked list.
@@ -49,10 +49,10 @@ interface ILinkedList extends Countable
     /**
      * Finds if a node exists in the linked list.
      *
-     * @param INode $node
+     * @param Node $node
      * @return bool
      */
-    public function find(INode $node): bool;
+    public function find(Node $node): bool;
 
     /**
      * Returns true if the linked list is empty.

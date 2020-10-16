@@ -4,7 +4,7 @@ namespace ThanhRyot\DataStructures\Queue;
 
 use Countable;
 use UnderflowException;
-use ThanhRyot\Contracts\IQueue;
+use ThanhRyot\Interfaces\Queue as IQueue;
 
 class Queue implements IQueue, Countable
 {
