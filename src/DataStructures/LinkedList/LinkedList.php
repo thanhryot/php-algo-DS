@@ -8,7 +8,7 @@ use UnderflowException;
 
 class LinkedList implements ILinkedList
 {
-    private $head = null;
+    private ?INode $head = null;
 
     public function insertAtHead(INode $node): void
     {

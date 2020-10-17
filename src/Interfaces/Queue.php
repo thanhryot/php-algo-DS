@@ -9,10 +9,10 @@ interface Queue extends Countable
     /**
      * Add an item in queue.
      *
-     * @param string $item
+     * @param mixed $item
      * @return void
      */
-    public function enqueue(string $item): void;
+    public function enqueue($item): void;
 
     /**
      * Remove an item in queue.

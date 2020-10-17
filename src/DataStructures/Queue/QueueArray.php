@@ -14,7 +14,7 @@ class QueueArray implements IQueue
         $this->items = $init;
     }
 
-    public function enqueue(string $item): void
+    public function enqueue($item): void
     {
         array_unshift($this->items, $item);
     }

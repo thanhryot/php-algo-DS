@@ -9,15 +9,15 @@ interface Stack extends Countable
     /**
      * Add an item in stack.
      *
-     * @param string $item
+     * @param mixed $item
      * @return void
      */
-    public function push(string $item): void;
+    public function push($item): void;
 
     /**
      * Remove an item in stack.
      *
-     * @param string $item
+     * @param mixed $item
      * @return void
      */
     public function pop(): void;
@@ -25,7 +25,7 @@ interface Stack extends Countable
     /**
      * Get a current item in stack.
      *
-     * @param string $item
+     * @param mixed $item
      * @return string
      */
     public function peek(): string;

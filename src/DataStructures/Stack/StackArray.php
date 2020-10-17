@@ -17,7 +17,7 @@ class StackArray implements IStack
         $this->limit = $limit;
     }
 
-    public function push(string $item): void
+    public function push($item): void
     {
         if (count($this->items) < $this->limit) {
             array_unshift($this->items, $item);
