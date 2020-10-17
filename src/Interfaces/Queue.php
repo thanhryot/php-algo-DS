@@ -2,7 +2,9 @@
 
 namespace ThanhRyot\Interfaces;
 
-interface Queue
+use Countable;
+
+interface Queue extends Countable
 {
     /**
      * Add an item in queue.
@@ -24,7 +26,7 @@ interface Queue
      *
      * @return string
      */
-    public function top(): string;
+    public function peek(): string;
 
     /**
      * Check queue is empty or not.
@@ -32,4 +34,18 @@ interface Queue
      * @return bool
      */
     public function isEmpty(): bool;
+
+    /**
+     * Reset the queue.
+     *
+     * @return void
+     */
+    public function clear(): void;
+
+    /**
+     * Convert the queue to string.
+     *
+     * @return void
+     */
+    public function toString(): ?string;
 }

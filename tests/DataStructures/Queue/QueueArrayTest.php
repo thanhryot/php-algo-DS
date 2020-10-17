@@ -3,23 +3,23 @@
 namespace Test\DataStructures;
 
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\DataStructures\Queue\Queue;
+use ThanhRyot\DataStructures\Queue\QueueArray;
 use UnderflowException;
 
-class QueueTest extends TestCase
+class QueueArrayTest extends TestCase
 {
     private $initQueue = ["Alice", "Join", "Alex", "Chichi"];
 
     public function testCanEnqueueQueue()
     {
-        $queue = new Queue($this->initQueue);
+        $queue = new QueueArray($this->initQueue);
         $queue->enqueue("Thanh");
         $this->assertCount(5, $queue);
     }
 
     public function testCanDequeueQueue()
     {
-        $queue = new Queue($this->initQueue);
+        $queue = new QueueArray($this->initQueue);
         $queue->dequeue();
         $this->assertCount(3, $queue);
     }
@@ -27,7 +27,7 @@ class QueueTest extends TestCase
     public function testExceptionWhenGotTopOfEmptyQueue()
     {
         $this->expectException(UnderflowException::class);
-        $queue = new Queue([]);
-        $queue->top();
+        $queue = new QueueArray([]);
+        $queue->peek();
     }
 }
