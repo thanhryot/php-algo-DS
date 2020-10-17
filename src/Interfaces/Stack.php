@@ -17,7 +17,6 @@ interface Stack extends Countable
     /**
      * Remove an item in stack.
      *
-     * @param mixed $item
      * @return void
      */
     public function pop(): void;
@@ -25,10 +24,9 @@ interface Stack extends Countable
     /**
      * Get a current item in stack.
      *
-     * @param mixed $item
-     * @return string
+     * @return mixed
      */
-    public function peek(): string;
+    public function peek();
 
     /**
      * Check stack is empty or not.

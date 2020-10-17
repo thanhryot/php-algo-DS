@@ -24,9 +24,9 @@ interface Queue extends Countable
     /**
      * Get a current item in queue.
      *
-     * @return string
+     * @return mixed
      */
-    public function peek(): string;
+    public function peek();
 
     /**
      * Check queue is empty or not.

@@ -4,7 +4,6 @@ namespace Test\DataStructures;
 
 use OverflowException;
 use PHPUnit\Framework\TestCase;
-use ThanhRyot\DataStructures\Stack\Stack;
 use ThanhRyot\DataStructures\Stack\StackArray;
 
 class StackArrayTest extends TestCase
