@@ -45,7 +45,7 @@ interface Queue extends Countable
     /**
      * Convert the queue to string.
      *
-     * @return void
+     * @return null|string
      */
     public function toString(): ?string;
 }
